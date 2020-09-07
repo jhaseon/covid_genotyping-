@@ -17,7 +17,15 @@ st.title('COVID-19 Genotyping App')
 
 st.write('Hank Yun: NYCDSA Capstone Project')
 
-model = keras.models.load_model("/home/jhaseon/projects/covid/model2")
+add_selectbox = st.sidebar.selectbox(
+        "Which model?", 
+        ("Original", "Augmented"))
+
+if add_selectbox == "Original":
+    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model"))
+
+if add_selectbox == "Augmented":
+    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model2"))
 
 img_width, img_height = 30, 120
 
