@@ -22,10 +22,10 @@ add_selectbox = st.sidebar.selectbox(
         ("Original", "Augmented"))
 
 if add_selectbox == "Original":
-    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model"))
+    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model2"))
 
 if add_selectbox == "Augmented":
-    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model2"))
+    model = keras.models.load_model(os.path.join(PROJECT_PATH, "model"))
 
 img_width, img_height = 30, 120
 
